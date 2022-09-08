@@ -5,13 +5,13 @@ import RemoveIcon from '@mui/icons-material/Remove'
 export const ItemCount = (props) => {
     const [count, setCount] = useState(props.initial)
     const IncreaseCount = () =>{
-        count == props.stock ? console.log(Error) : setCount(count+1)
+        count == props.stock ? alert('¡NO HAY MAS STOCK!') : setCount(count+1)
     }
     const DecreaseCount = () =>{
-        count == props.initial ? console.log(Error) : setCount(count-1)
+        count == props.initial ? alert('La cantidad debe ser 1 o más.') : setCount(count-1)
     }
     const onAdd = () => {
-        alert('You have selected ' + count + ' items')
+        alert('Has seleccionado ' + count + ' productos')
     }
     return (
         <div>
