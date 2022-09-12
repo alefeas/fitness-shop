@@ -1,13 +1,14 @@
 import { useEffect, useState  } from "react"
 import { ItemList } from "../itemList/ItemList";
-import { promesa } from "../../utils/promesa"
+import { customFetch } from "../utils/customFetch"
 import '../../styles/ItemListContainer.css'
+const { products } = require('../utils/products')
 
-export const ItemListContainer = (item) => {
+export const ItemListContainer = () => {
     const [datos,setDatos] = useState([])
     
     useEffect(() => {
-        promesa()
+        customFetch(2000, products)
             .then(result => setDatos(result))
             .catch(err => console.log(err))
     }, [])
