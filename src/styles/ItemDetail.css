@@ -1,6 +1,12 @@
 .productDetail{
     width: 1400px;
-    margin: 0 auto;
+    margin: 0px auto;
     display: flex;
     justify-content: space-between;
+}
+.itemDetailContainer{
+    width: 1400px;
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
 }
