@@ -14,15 +14,16 @@ export const products = [
         price: 20000,
         stock: 1,
         description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, minus nulla. Eligendi molestias nulla, harum velit magnam corporis, vitae consequuntur incidunt reiciendis tempora ratione totam qui cupiditate inventore fuga sint!',
-        categoryId: 2,
+        categoryId: '2',
         img: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/919/712/products/mancuerna-hexagonal-odea-10-kg-11-cc777ac81f2c3f76e416244933857566-1024-1024.png'
     },
     {
         id: 3,
         name: 'Barra W',
         price: 20000,
-        stock: 2,
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, minus nulla. Eligendi molestias nulla, harum velit magnam corporis, vitae consequuntur incidunt reiciendis tempora ratione totam qui cupiditate inventore fuga sint!',categoryId: 1,
+        stock: 0,
+        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, minus nulla. Eligendi molestias nulla, harum velit magnam corporis, vitae consequuntur incidunt reiciendis tempora ratione totam qui cupiditate inventore fuga sint!',
+        categoryId: 1,
         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTluSTYD4K6myFhLYc6CQuj6VLjqs8XN3MPVUzaxOj6-VzdCQRpiiSMZfjiKZWG7lhWYNk&usqp=CAU'
     },
     {
