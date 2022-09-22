@@ -1,27 +1,32 @@
 import { ItemCount } from '../itemCount/ItemCount'
 import '../../styles/ItemDetail.css'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useContext} from 'react'
+import { CartContext } from "../cartContext/CartContext"
 
 export const ItemDetail = ({item}) => {
     const [itemCount, setItemCount] = useState(0)
+    const ctx = useContext(CartContext)
 
-    const onAdd = (count) => {
-        if(count>0){
-            alert('Has seleccionado ' + count + ' productos')
-            setItemCount(count)
+    const onAdd = (quantity) => {
+        if(quantity>0){
+            setItemCount(quantity)
+            alert('Has seleccionado ' + quantity + ' productos')
         }
-        else if(count==0){
+        else if(quantity==0){
             alert('¡NO TENEMOS STOCK DE ESTE PRODUCTO!')
         }
+        setItemCount(quantity)
+        ctx.addItem(item, quantity)
     }
+
     return (
         <>
         {
             item.img
             ?
             <div className='productDetail'>
-                <img src={item.img} width='800px' alt="" />
+                <img src={item.img} width='800px' alt={item.name} />
                 <div>
                     <p>{item.name}</p>
                     <p>{item.description}</p>
