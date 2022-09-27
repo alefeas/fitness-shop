@@ -1,7 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
-.cartContainer{
+.containerCartTitle{
+    font-family: 'Staatliches';
+    border-bottom: 1px solid black;
     width: 1400px;
-    margin: 0 auto;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.cartContainer{
+    display: flex;
+    gap: 40px;
+    width: 1400px;
+    margin: 30px auto 57.5px auto;
+}
+.containerItemsCart{
+    font-family: 'Staatliches';
+    font-size: 34px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+    width: 960px;
+}
+.itemCart{
+    width: 960px;
+}
+.containerCosts{
+    font-family: 'Staatliches';
+    font-size: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 252px;
+    width: 400px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.containerCosts button{
+    background-color: rgb(75, 3, 3);
+    color: white;
+    border: 1px sold black;
+    font-size: 22px;
+    padding: 5px;
+}
+.spanTitleCosts{
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+.containerSpanCosts{
+    display: flex;
+    justify-content: space-between;
+}
+.containerCosts span {
+    margin: 10px;
 }
 .itemCart{
     display: flex;
@@ -14,6 +64,9 @@
     display: flex;
     justify-content: space-between;
 }
+.itemCartInfo img{
+    margin-right: 10px;
+}
 .itemDetailsContainer{
     margin: 10px;
     display: flex;
@@ -21,8 +74,12 @@
     justify-content: space-between;
 }
 .itemDetailsContainer span{
-    font-size: 32px;
-    font-family: 'League Gothic', sans-serif;
+    font-size: 26px;
+    font-family: 'Staatliches';
+}
+.titleItemCart{
+    font-size: 30px !important;
+    font-weight: bold;
 }
 .btnDeleteProduct{
     height: 50px;
@@ -31,6 +88,7 @@
     background-color: black;
     color: white;
     border-radius: 50%;
+    font-size: 1px;
 }
 .btnAddRemove{
     border: none;
@@ -41,5 +99,4 @@
     background-color: black;
     color: white;
     border-radius: 50%;
-    margin-bottom: 10px;
 }

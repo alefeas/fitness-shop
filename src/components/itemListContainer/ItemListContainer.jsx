@@ -11,7 +11,7 @@ export const ItemListContainer = () => {
     
     useEffect(() => {
         if (idCategory) {
-            customFetch(2000, products.filter(item => item.categoryId == idCategory))
+            customFetch(0, products.filter(item => item.categoryId == idCategory))
                 .then(result => setDatos(result))
                 .catch(err => console.log(err))
         }

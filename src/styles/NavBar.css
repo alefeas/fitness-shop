@@ -1,0 +1,13 @@
+header{
+    color: white;
+    background-color: rgb(83, 0, 0);
+}
+form{
+    margin-right: 20px;
+}
+form button{
+    background-color: transparent;
+    border-radius: 10%;
+    color: white;
+    border:1px solid white;
+}

@@ -22,7 +22,7 @@ export const products = [
         name: 'Barra W',
         price: 20000,
         stock: 0,
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, minus nulla. Eligendi molestias nulla, harum velit magnam corporis, vitae consequuntur incidunt reiciendis tempora ratione totam qui cupiditate inventore fuga sint!',
+        description: 'La EZ W CURL de CATLER Pro Fitness es una barra olimpica diseñada para trabajar brazos.. Al ser olimpicas tienen los extremos con un diametro de 50 MM, por lo cual no olvides que es necesario utilizar discos Olimpicos, es decir, con buje o centro de 50 MM.',
         categoryId: 1,
         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTluSTYD4K6myFhLYc6CQuj6VLjqs8XN3MPVUzaxOj6-VzdCQRpiiSMZfjiKZWG7lhWYNk&usqp=CAU'
     },
@@ -47,7 +47,7 @@ export const products = [
     {
         id: 6,
         name: 'Mancuernas 8kg',
-        price: 20000,
+        price: 2000,
         stock: 3,
         description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, minus nulla. Eligendi molestias nulla, harum velit magnam corporis, vitae consequuntur incidunt reiciendis tempora ratione totam qui cupiditate inventore fuga sint!',
         categoryId: 2,
@@ -56,7 +56,7 @@ export const products = [
     {
         id: 7,
         name: 'Discos 20kg',
-        price: 20000,
+        price: 5000,
         stock: 7,
         description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, minus nulla. Eligendi molestias nulla, harum velit magnam corporis, vitae consequuntur incidunt reiciendis tempora ratione totam qui cupiditate inventore fuga sint!',
         categoryId: 4,
