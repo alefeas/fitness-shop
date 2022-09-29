@@ -21,6 +21,7 @@ export const ItemDetail = ({item}) => {
         setItemCount(quantity)
         ctx.addItem(item, quantity)
     }
+
     return (
         <>
         {
@@ -32,7 +33,7 @@ export const ItemDetail = ({item}) => {
                     <p className='nameItemDetail'>{item.name}</p>
                     <p>{item.description}</p>
                     <p>Precio: ${item.price}</p>
-                    <p>Stock: {item.stock==0?'NO DISPONIBLE' :'DISPONIBLE'}</p>
+                    <p>Stock: {item.stock} {item.stock==0||item.stock>1?'Uds.' :'Ud.'}</p>
                 {
                     item.stock == 0 || itemCount !=0
                     ?

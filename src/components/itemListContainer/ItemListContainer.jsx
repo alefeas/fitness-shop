@@ -1,15 +1,14 @@
 import { useEffect, useState  } from "react"
 import { useParams } from 'react-router-dom'
 import { ItemList } from "../itemList/ItemList";
-import { customFetch } from "../utils/customFetch"
+import { firestoreFetch } from "../../utils/firestoreFetch"
 import '../../styles/ItemListContainer.css'
-const { products } = require('../utils/products')
 
 export const ItemListContainer = () => {
     const [datos,setDatos] = useState([])
     const { idCategory } = useParams()
     
-    useEffect(() => {
+/*     useEffect(() => {
         if (idCategory) {
             customFetch(0, products.filter(item => item.categoryId == idCategory))
                 .then(result => setDatos(result))
@@ -20,7 +19,19 @@ export const ItemListContainer = () => {
                 .then(result => setDatos(result))
                 .catch(err => console.log(err))
         }
+    }, [idCategory]) */
+
+    useEffect(() => {
+        firestoreFetch(idCategory)
+            .then(res => setDatos(res))
+            .catch(err => console.log(err))
     }, [idCategory])
+
+    useEffect(() => {
+        return (() => {
+            setDatos([])
+        })
+    }, [])
 
     return (
         <div className="productCatalog">

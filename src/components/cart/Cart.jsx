@@ -39,7 +39,7 @@ export const Cart = ({item}) => {
                     :
                     <div>
                     <p>SU CARRITO ESTA VACÍO.</p>
-                    <Link to={`/`}><button>IR AL INICIO</button></Link>
+                    <Link to={`/`}><button className="buttonCart">IR AL INICIO</button></Link>
                     </div> 
 
                 }
@@ -59,7 +59,7 @@ export const Cart = ({item}) => {
                     <span>Precio total: </span>
                     <span>${ctx.total()}</span>
                     </div>
-                    <button>FINALIZAR COMPRA</button>
+                    <button className="buttonCart">FINALIZAR COMPRA</button>
                 </div>
             }
         </div>
