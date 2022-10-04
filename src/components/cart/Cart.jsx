@@ -1,4 +1,6 @@
-import { useContext, useState } from "react"
+import { serverTimestamp, setDoc, doc, collection, updateDoc, increment } from "firebase/firestore";
+import { db } from "../../utils/firebaseConfig";
+import { useContext } from "react"
 import { CartContext } from "../cartContext/CartContext"
 import { Link } from "react-router-dom";
 import DeleteIcon from '@mui/icons-material/Delete'
@@ -6,8 +8,43 @@ import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
 import '../../styles/Cart.css'
 
-export const Cart = ({item}) => {
+export const Cart = () => {
     const ctx = useContext(CartContext)
+
+    const createOrder = async () => {
+        if (ctx.cartList.length >0) {
+            let itemsFromDB = ctx.cartList.map(item => ({
+                id: item.idItem,
+                name: item.nameItem,
+                price: item.priceItem,
+                quantity: item.quantityItem
+            }))
+            let order = {
+                buyer: {
+                    name: 'José Gimenez',
+                    email: 'josegi@gmail.com',
+                    phone: '01122943619'
+                },
+                date: serverTimestamp(),
+                items: ctx.cartList,
+                quantity: ctx.calculateCartQuantity(),
+                total: ctx.total()
+            }
+            const newOrderRef = doc(collection(db, 'orders'))
+            await setDoc(newOrderRef, order)
+            alert('PEDIDO REALIZADO.')
+            ctx.clear()
+            itemsFromDB.map(async (item) => {
+                const itemRef = doc(db, 'products', item.id)
+                await updateDoc(itemRef, {
+                    stock: increment(-item.quantity)
+                })
+            })
+        } else {
+            alert('SU CARRITO ESTÁ VACÍO.')
+        }
+    }
+
     return (
         <div>
             <div className="containerCartTitle">
@@ -26,9 +63,9 @@ export const Cart = ({item}) => {
                     <span className="titleItemCart">{item.nameItem}</span>
                     <div>
                     <span>Cantidad:</span>
-                    <button className="btnAddRemove" onClick={ctx.Decrease}><RemoveIcon className="iconAddRemove"/></button>
+                    <button className="btnAddRemove" onClick={() => ctx.decrease(item.idItem)}><RemoveIcon className="iconAddRemove"/></button>
                     <span>{item.quantityItem}</span>
-                    <button className="btnAddRemove" onClick={ctx.Increase}><AddIcon className="iconAddRemove"/></button>
+                    <button className="btnAddRemove" onClick={() => ctx.increase(item.idItem)}><AddIcon className="iconAddRemove"/></button>
                     </div>
                     <span>Precio: ${ctx.calculateItemPrice(item.idItem)}</span>
                     </div>
@@ -57,9 +94,9 @@ export const Cart = ({item}) => {
                     </div>
                     <div className="containerSpanCosts">
                     <span>Precio total: </span>
-                    <span>${ctx.total()}</span>
+                        <span>${ctx.total()}</span>
                     </div>
-                    <button className="buttonCart">FINALIZAR COMPRA</button>
+                    <button className="buttonCart" onClick={createOrder}>FINALIZAR COMPRA</button>
                 </div>
             }
         </div>

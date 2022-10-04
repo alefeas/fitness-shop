@@ -14,16 +14,16 @@ export const NavBar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <Link to='/category/1' className="nav-link text-white" href="#">Barras</Link>
+            <Link to='/category/barras' className="nav-link text-white" href="#">Barras</Link>
           </li>
           <li className="nav-item">
-            <Link to='/category/2' className="nav-link text-white" href="#">Mancuernas</Link>
+            <Link to='/category/mancuernas' className="nav-link text-white" href="#">Mancuernas</Link>
           </li>
           <li className="nav-item">
-            <Link to='/category/3' className="nav-link text-white" href="#">Bancos</Link>
+            <Link to='/category/bancos' className="nav-link text-white" href="#">Bancos</Link>
           </li>
           <li className="nav-item">
-            <Link to='/category/4' className="nav-link text-white" href="#">Discos</Link>
+            <Link to='/category/discos' className="nav-link text-white" href="#">Discos</Link>
           </li>
           </ul>
           <form className="d-flex" role="search">

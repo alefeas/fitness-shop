@@ -2,7 +2,7 @@ import { createContext, useState } from 'react'
 
 export const CartContext = createContext()
 
-export const CartContextProvider = ({ children, item }) => {
+export const CartContextProvider = ({ children}) => {
     const [cartList, setCartList] = useState([])
 
     const addItem = (item, quantity) => {
@@ -16,14 +16,30 @@ export const CartContextProvider = ({ children, item }) => {
                     nameItem:item.name,
                     priceItem:item.price,
                     quantityItem:quantity,
+                    stockItem: item.stock
                 }])
-        }
-        else{
-            found.quantityItem += quantity
-        }
-        stockItem:item.stock-=quantity
+            }
+            else{
+                found.quantityItem += quantity
+                if(found.quantityItem > found.stockItem) {
+                    found.quantityItem -= quantity
+                    alert('STOCK INSUFICIENTE.')
+                }
+            }
     }
-    const Increase = () => {
+    const increase = (id) => {
+        const indice = cartList.findIndex(item => item.idItem == id)
+        if (cartList[indice].quantityItem < cartList[indice].stockItem) {
+            cartList[indice].quantityItem += 1
+            setCartList([...cartList])
+        }
+    }
+    const decrease = (id) => {
+        const indice = cartList.findIndex(item => item.idItem == id)
+        if (cartList[indice].quantityItem > 1) {
+            cartList[indice].quantityItem -= 1
+            setCartList([...cartList])
+        }
     }
     const removeItem = (id) => {
         let result = cartList.filter(item => item.idItem !== id)
@@ -36,7 +52,6 @@ export const CartContextProvider = ({ children, item }) => {
         let index = cartList.map(item => item.idItem).indexOf(idItem)
         return cartList[index].priceItem * cartList[index].quantityItem
     }
-    
     const totalTax = () => {
         return totalPrice() * .21
     }
@@ -53,7 +68,7 @@ export const CartContextProvider = ({ children, item }) => {
         return cartList.reduce((total, item) => total + item.quantityItem, 0)
     }
     return(
-        <CartContext.Provider value={{cartList, addItem, clear, removeItem, Increase, calculateCartQuantity, calculateItemPrice,totalPrice,totalTax, calcEnvio,total}}>
+        <CartContext.Provider value={{cartList, addItem, clear, removeItem, calculateCartQuantity, calculateItemPrice, totalPrice, totalTax, calcEnvio, total, increase, decrease}}>
             { children }
         </CartContext.Provider>
     )
