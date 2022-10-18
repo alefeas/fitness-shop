@@ -1,0 +1,110 @@
+.containerCartTitle{
+    @extend .mainFont;
+    border-bottom: 1px solid black;
+    width: 1633.33px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
+    .btnDeleteCart {
+        font-size: 24px;
+        background: none;
+        border: none;
+    }
+}
+.cartEmpty {
+    @extend .mainFont;
+    margin: 86px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.cartContainer{
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    width: 1633.33px;
+    margin: 30px auto 57.5px auto;
+    .containerItemsCart{
+        font-size: 34px;
+        display: flex;
+        flex-wrap: wrap;
+        gap:20px;
+        justify-content: center;
+        align-items: center;
+        width: 1060px;
+        .textCart {
+            font-size: 40px;
+            margin: 0;
+        }
+        .buttonCart {
+            width: 150px;
+        }
+        .itemCart{
+            width: 1060px;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            .btnDeleteProduct{
+                height: 50px;
+                width: 50px;
+                margin: 10px;
+                background-color: black;
+                color: white;
+                border-radius: 50%;
+                font-size: 1px;
+            }
+            .itemCartInfo{
+                display: flex;
+                justify-content: space-between;
+                img{
+                margin-right: 10px;
+                }
+                .itemDetailsContainer{
+                    margin: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    @extend .mainFont;
+                    .infoCartBold {
+                        font-weight: bold;
+                    }
+                    .titleItemCart{
+                        margin-bottom: 5px;
+                        font-size: 30px !important;
+                        font-weight: bold;
+                    }
+                    span{
+                        font-size: 26px;
+                    }
+                    .priceItemCart {
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+    }
+    .containerCosts{
+        font-family: 'Staatliches';
+        font-size: 26px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height:300px;
+        width: 533.33px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        .containerSpanCosts{
+            display: flex;
+            justify-content: space-between;
+            span {
+                margin: 10px;
+            }
+        }
+        .spanTitleCosts{
+            text-align: center;
+            border-bottom: 1px solid black;
+            padding: 5px;
+        }
+    }
+}

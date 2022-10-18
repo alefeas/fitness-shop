@@ -1,55 +1,32 @@
-import { serverTimestamp, setDoc, doc, collection, updateDoc, increment } from "firebase/firestore";
-import { db } from "../../utils/firebaseConfig";
 import { useContext } from "react"
 import { CartContext } from "../cartContext/CartContext"
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import DeleteIcon from '@mui/icons-material/Delete'
 import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
-import '../../styles/Cart.css'
+import '../../styles/styles.scss'
 
 export const Cart = () => {
     const ctx = useContext(CartContext)
 
-    const createOrder = async () => {
-        if (ctx.cartList.length >0) {
-            let itemsFromDB = ctx.cartList.map(item => ({
-                id: item.idItem,
-                name: item.nameItem,
-                price: item.priceItem,
-                quantity: item.quantityItem
-            }))
-            let order = {
-                buyer: {
-                    name: 'José Gimenez',
-                    email: 'josegi@gmail.com',
-                    phone: '01122943619'
-                },
-                date: serverTimestamp(),
-                items: ctx.cartList,
-                quantity: ctx.calculateCartQuantity(),
-                total: ctx.total()
-            }
-            const newOrderRef = doc(collection(db, 'orders'))
-            await setDoc(newOrderRef, order)
-            alert('PEDIDO REALIZADO.')
-            ctx.clear()
-            itemsFromDB.map(async (item) => {
-                const itemRef = doc(db, 'products', item.id)
-                await updateDoc(itemRef, {
-                    stock: increment(-item.quantity)
-                })
-            })
-        } else {
-            alert('SU CARRITO ESTÁ VACÍO.')
-        }
+    const emptyCartAlert = () => {
+        toast('🗑️ CARRITO VACÍO', {
+            autoClose: 1500,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+            theme: "dark",
+        });
     }
-
     return (
         <div>
             <div className="containerCartTitle">
             <h1>CARRITO</h1>
-            <button onClick={ctx.clear}>VACIAR CARRITO</button>
+            <button className='btnDeleteCart' onClick={ctx.clear}><DeleteIcon/> VACIAR</button>
             </div>
             <div className="cartContainer">
                 <div className="containerItemsCart">
@@ -61,24 +38,23 @@ export const Cart = () => {
                     <img src={item.imgItem} width='250' alt={item.nameItem} />
                     <div className="itemDetailsContainer">
                     <span className="titleItemCart">{item.nameItem}</span>
-                    <div>
-                    <span>Cantidad:</span>
+                    <div className="secondaryFont">
+                    <span className="infoCartBold">Cantidad:</span>
                     <button className="btnAddRemove" onClick={() => ctx.decrease(item.idItem)}><RemoveIcon className="iconAddRemove"/></button>
-                    <span>{item.quantityItem}</span>
+                    <input className="count mainFont" value={item.quantityItem}/>
                     <button className="btnAddRemove" onClick={() => ctx.increase(item.idItem)}><AddIcon className="iconAddRemove"/></button>
                     </div>
-                    <span>Precio: ${ctx.calculateItemPrice(item.idItem)}</span>
+                    <span className="secondaryFont infoCartBold">Precio: <span className="mainFont priceItemCart">${ctx.calculateItemPrice(item.idItem)}</span></span>
                     </div>
                     </div>
                     <button onClick={() => ctx.removeItem(item.idItem)} className="btnDeleteProduct"><DeleteIcon/></button>
                     </div>
                     )
                     :
-                    <div>
-                    <p>SU CARRITO ESTA VACÍO.</p>
-                    <Link to={`/`}><button className="buttonCart">IR AL INICIO</button></Link>
+                    <div className="cartEmpty">
+                    <p className="textCart">SU CARRITO ESTA VACÍO.</p>
+                    <Link to={`/`}><button className="buttonCart backgroundMainColor buttonCustom">IR AL INICIO</button></Link>
                     </div> 
-
                 }
                 </div>
             {
@@ -94,9 +70,14 @@ export const Cart = () => {
                     </div>
                     <div className="containerSpanCosts">
                     <span>Precio total: </span>
-                        <span>${ctx.total()}</span>
+                    <span>${ctx.total()}</span>
                     </div>
-                    <button className="buttonCart" onClick={createOrder}>FINALIZAR COMPRA</button>
+                    {
+                        ctx.cartList.length > 0 
+                        ?
+                        <Link to={`/checkout`}><button className="buttonCustom backgroundMainColor">FINALIZAR COMPRA</button></Link>
+                        : <button className="buttonCustom backgroundMainColor" onClick={emptyCartAlert}>FINALIZAR COMPRA</button>
+                    }
                 </div>
             }
         </div>

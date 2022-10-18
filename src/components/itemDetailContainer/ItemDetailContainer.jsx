@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import { ItemDetail } from '../itemDetail/ItemDetail'
 import { firestoreFetchOne } from "../../utils/firestoreFetch";
-import '../../styles/ItemDetail.css'
+import '../../styles/styles.scss'
 
 export const ItemDetailContainer = () => {
     const [dato, setDato] = useState({})

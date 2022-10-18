@@ -2,7 +2,7 @@ import { useEffect, useState  } from "react"
 import { useParams } from 'react-router-dom'
 import { ItemList } from "../itemList/ItemList";
 import { firestoreFetch } from "../../utils/firestoreFetch"
-import '../../styles/ItemListContainer.css'
+import '../../styles/styles.scss'
 
 export const ItemListContainer = () => {
     const [datos,setDatos] = useState([])
@@ -21,8 +21,15 @@ export const ItemListContainer = () => {
     }, [])
 
     return (
-        <div className="productCatalog">
-            <ItemList products={datos}/>
+        <div className="containerListTitle">
+            <div className="containerFilter">
+                <div className="containerTitelCategory">
+                <span className="titleCategory">Productos</span>
+                </div>
+            </div>
+            <div className="productCatalog">
+                <ItemList products={datos}/>
+            </div>
         </div>
     )
 }

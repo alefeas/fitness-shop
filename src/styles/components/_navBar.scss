@@ -1,0 +1,40 @@
+header{
+    img {
+        border-radius: 50%;
+        height: 60px;
+        width: auto;
+    }
+    nav {
+        height: 75px;
+    }
+    .logo {
+        border-radius: 50%;
+    }
+    .nav-link {
+        @extend .secondaryFont;
+        font-size: 20px;
+        &:hover {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+    }
+    form{
+        button{
+            background-color: transparent;
+            border-radius: 10%;
+            color: white;
+            border:1px solid white;
+        } 
+    }
+    .dropdown {
+        color: white !important;
+        .arrowDown {
+            position: absolute;
+            right: 35%;
+            top: 62.5%;
+            font-size: 30px;
+        }
+    }
+}
+.dropdown-toggle::after {
+    display: none !important;
+}

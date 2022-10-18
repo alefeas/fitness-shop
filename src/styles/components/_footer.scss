@@ -1,0 +1,44 @@
+footer {
+    margin:0 auto;
+    width: 100%;
+}
+.footerPhrase {
+    width: 30%;
+    margin: 0px auto 30px auto;
+    @extend .mainFont;
+    text-align: center;
+    font-size: 30px;
+}
+.containerCredits {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 40px auto 0 auto;
+    text-align: center;
+    .gitHubIcon {
+        margin: 7.5px;
+    }
+}
+.footer-container {
+    width: 90%;
+    max-width: 1680px;
+    margin: auto;
+}
+.footer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4em;
+    margin: 0 auto;
+    width:90%;
+}
+.fh-line {
+    width: 100%;
+    height: 1px;
+    background-color: white;
+}
+.fh-logo img {
+    border-radius:50%;
+    width:100px;
+    height:auto;
+}

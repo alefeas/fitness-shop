@@ -1,0 +1,86 @@
+//FONTS
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Stoke:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+
+//VARIABLES
+$main-color: rgb(90, 38, 37);
+
+//COMPONENTS
+@import './components/_navBar.scss';
+@import './components/_footer.scss';
+@import './components/_cartWidget.scss';
+@import './components/itemDetail.scss';
+@import './components/_itemListContainer.scss';
+@import './components/_loader.scss';
+@import './components/_item.scss';
+@import './components/_cart.scss';
+
+//PAGES
+@import './pages/_checkout';
+@import './pages/_notFound';
+
+//GENERAL STYLES
+a {
+    color: white !important;
+}
+.mainFont {
+    font-family: 'Staatliches';
+}
+.secondaryFont {
+    font-family: "Raleway", sans-serif;
+}
+.backgroundMainColor {
+    background-color: $main-color;
+}
+.mainColor {
+    color: $main-color !important
+}    
+.buttonCustom {
+    width: 100%;
+    color: white;
+    border: 1px solid black;
+    font-size: 22px ;
+    padding: 5px;
+}
+.count {
+    border: transparent;
+    width: 30px;
+    font-size: 30px;
+    outline: none;
+    text-align: center;
+    font-weight: normal;
+}
+.btnAddRemove{
+    border: none;
+    background-color: white;
+    .iconAddRemove{
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        border-radius: 50%;
+    }
+}
+
+//ALERTS
+.Toastify__toast-container {
+    margin-top: 70px;
+    width: 250px;
+}
+.Toastify__toast-theme--dark {
+    font-size: 22px;
+    font-family:'Staatliches';
+    background-color: $main-color;
+    border-radius: 2px;
+}
+.Toastify__progress-bar {
+    background-color: white;
+}
+.Toastify__close-button {
+    display: none;
+}
+.swal2-popup {
+    font-size: 22px;
+    @extend .mainFont
+}

@@ -1,0 +1,15 @@
+.containerNotFound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 1400px;
+    height: 600px;
+    span {
+        font-size: 100px;
+    }
+    button {
+        width: 150px;
+    }
+}

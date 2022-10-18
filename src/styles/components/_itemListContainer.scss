@@ -1,0 +1,38 @@
+.containerListTitle {
+    font-family: 'Staatliches';
+    width: 1633.33px;
+    margin: 30px auto;
+    .containerFilter {
+        margin-bottom: 30px;
+        .containerTitelCategory {
+            border-bottom: 1px solid black;
+            .titleCategory {
+                font-size: 40px;
+            }
+        }
+    }    
+    .productCatalog {
+        display: flex;
+        justify-content: left;
+        flex-wrap: wrap;
+        gap: 33.33px;
+        div {
+            width: 300px;
+        }
+        .btnDetalles{
+            width: 100%;
+            height: 50px;
+            font-size: 22px;
+            color: white;
+            border: none;
+        }
+    }
+}
+
+//RESPONSIVE
+
+@media screen and (max-width: 1700px) {
+    .contiainerListFilter {
+        width: 1400px;
+    }
+}

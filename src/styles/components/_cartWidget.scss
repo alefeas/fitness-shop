@@ -1,0 +1,23 @@
+.cartWidget{
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    border: none;
+    .localMallIcon {
+        font-size: 30px;
+    }
+    .quantityCart{
+        background-color: rgb(0, 0, 0);
+        font-family: 'Staatliches';
+        font-size: 14px;
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+        color: rgb(255, 255, 255);
+        bottom:39.5px;
+        right: 16px;
+        position: absolute;
+    }
+}

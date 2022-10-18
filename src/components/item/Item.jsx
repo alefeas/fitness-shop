@@ -1,4 +1,4 @@
-import '../../styles/Item.css'
+import '../../styles/styles.scss'
 import { Link } from 'react-router-dom'
 
 export const Item = ({name, price, img, id, stock}) => {
@@ -10,10 +10,12 @@ export const Item = ({name, price, img, id, stock}) => {
             <></>
             :
             <div className="product bg-white">
-            <img width='200px' height='200px' src={img} alt={name} />
-            <p>{name}</p>
-            <p>Precio: ${price}</p>
-            <Link to={`/item/${id}`}><button className='btnDetalles'>Ver Detalles</button></Link>
+            <img src={img} alt={name} />
+            <div className='containerInfoItem'>
+                <p className='itemName'>{name}</p>
+                <p className='itemPrice'>${price}</p>
+            </div>
+            <Link to={`/item/${id}`}><button className='btnDetalles backgroundMainColor'>Ver Detalles</button></Link>
             </div>
         }
         </>

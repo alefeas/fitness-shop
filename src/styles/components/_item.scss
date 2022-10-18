@@ -1,0 +1,20 @@
+.product{
+    font-family: 'Staatliches';
+    width: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    img {
+        width: 100%;
+        height: auto;
+    }
+    .containerInfoItem {
+        margin: 10px;
+        .itemName {
+            font-size: 26px;
+            font-weight: bold;        
+        }  
+        .itemPrice {
+            margin: 0;
+            font-size: 24px;
+        } 
+    }
+}
