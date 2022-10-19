@@ -1,6 +1,4 @@
 .product{
-    font-family: 'Staatliches';
-    width: 300px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     img {
         width: 100%;
@@ -16,5 +14,9 @@
             margin: 0;
             font-size: 24px;
         } 
+    }
+    .noStock {
+        @extend .backgroundMainColor;
+        opacity: 70%;
     }
 }

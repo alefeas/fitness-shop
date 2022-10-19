@@ -29,3 +29,17 @@ export const firestoreFetchOne = async (idItem) => {
         console.log('No such document!');
     }
 }
+
+export const firestoreFetchTwo = async (idOrder) => {
+    const docRef = doc(db, 'products', idOrder)
+    const docSnap = await getDoc(docRef)
+
+    if (docSnap.exists) {
+        return {
+            id: idOrder,
+            ...docSnap.data()
+        }   
+    } else {
+        console.log('No such document!');
+    }
+}

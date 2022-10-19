@@ -1,7 +1,6 @@
 .containerLoader{
-    margin: 0 auto;
+    margin:auto;
     min-height: 500px;
-    top: 45%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,7 +9,7 @@
         height: 80px;
         border-radius: 50%;
         display: inline-block;
-        border-top: 3px solid rgb(88, 0, 0);
+        border-top: 3px solid rgb(90, 38, 37);
         border-right: 3px solid transparent;
         box-sizing: border-box;
         animation: rotation 1s linear infinite;

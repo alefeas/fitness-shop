@@ -44,9 +44,12 @@ a {
     font-size: 22px ;
     padding: 5px;
 }
+.containerCount {
+    width: 336px;
+}
 .count {
     border: transparent;
-    width: 30px;
+    width: 30px !important;
     font-size: 30px;
     outline: none;
     text-align: center;
@@ -70,7 +73,7 @@ a {
 }
 .Toastify__toast-theme--dark {
     font-size: 22px;
-    font-family:'Staatliches';
+    @extend .mainFont;
     background-color: $main-color;
     border-radius: 2px;
 }

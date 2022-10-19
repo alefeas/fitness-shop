@@ -6,12 +6,12 @@ export const ItemCount = (props) => {
     const [count, setCount] = useState(props.initial)
 
     const IncreaseCount = () =>{
-        if(count != props.stock) {
+        if(count !== props.stock) {
         setCount(count+1)
         }
     }
     const DecreaseCount = () =>{
-        if(count != props.initial) {
+        if(count !== props.initial) {
         setCount(count-1)
         }    
     }

@@ -1,5 +1,4 @@
 import GitHubIcon from '@mui/icons-material/GitHub';
-import { Link } from 'react-router-dom';
 import '../../styles/styles.scss'
 
 export const Footer = () => {
@@ -8,7 +7,7 @@ export const Footer = () => {
     <p className='footerPhrase'>"Tu cuerpo puede soportar cualquier esfuerzo, es tu mente a la que debes convencer."</p>
     <div className="footer-header">
       <div className="fh-line"></div>            <div className="fh-logo">
-        <img src='https://i.pinimg.com/originals/24/b9/9e/24b99e0d20b1638366832bcb6eb9bcd9.jpg' alt="Meat Palace Logo" />
+        <img src='https://static.vecteezy.com/system/resources/thumbnails/010/629/917/small_2x/vintage-logo-gym-fitness-template-illustration-free-vector.jpg' alt="Meat Palace Logo" />
       </div>
       <div className="fh-line"></div>
     </div>

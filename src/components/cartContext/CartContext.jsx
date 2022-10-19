@@ -14,7 +14,7 @@ export const CartContextProvider = ({ children}) => {
 
     const addItem = (item, quantity) => {
         let found = cartList.find(product => product.idItem === item.id)
-        if(found == undefined){
+        if(found === undefined){
             setCartList([
                 ...cartList,
                 {
@@ -61,14 +61,14 @@ export const CartContextProvider = ({ children}) => {
             }
     }
     const increase = (id) => {
-        const index = cartList.findIndex(item => item.idItem == id)
+        const index = cartList.findIndex(item => item.idItem === id)
         if (cartList[index].quantityItem < cartList[index].stockItem) {
             cartList[index].quantityItem += 1
             setCartList([...cartList])
         }
     }
     const decrease = (id) => {
-        const index = cartList.findIndex(item => item.idItem == id)
+        const index = cartList.findIndex(item => item.idItem === id)
         if (cartList[index].quantityItem > 1) {
             cartList[index].quantityItem -= 1
             setCartList([...cartList])

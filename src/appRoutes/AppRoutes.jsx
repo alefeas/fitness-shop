@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom"
-import {ItemListContainer} from '../components/itemListContainer/ItemListContainer'
+import { ItemListContainer } from '../components/itemListContainer/ItemListContainer'
 import { ItemDetailContainer } from '../components/itemDetailContainer/ItemDetailContainer'
 import { Cart } from "../components/cart/Cart";
 import { NotFound } from "../pages/notFound/NotFound";

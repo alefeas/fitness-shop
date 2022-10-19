@@ -86,7 +86,7 @@
         }
     }
     .containerCosts{
-        font-family: 'Staatliches';
+        @extend .mainFont;
         font-size: 26px;
         display: flex;
         flex-direction: column;

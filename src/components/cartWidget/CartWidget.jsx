@@ -1,6 +1,4 @@
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
-import LocalMallIcon from '@mui/icons-material/LocalMall';
-import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../cartContext/CartContext'
@@ -13,7 +11,7 @@ export const CartWidget = () => {
             <button className='cartWidget'>
             <ShoppingCartIcon className='localMallIcon'/>
             {
-                calculateCartQuantity() == 0
+                calculateCartQuantity() === 0
                 ?
                 <span></span>
                 :
