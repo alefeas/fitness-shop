@@ -3,11 +3,11 @@ import '../../styles/styles.scss'
 
 export const Footer = () => {
     return (
-<footer class="py-5 text-white backgroundMainColor">
+<footer className="py-5 text-white backgroundMainColor">
     <p className='footerPhrase'>"Tu cuerpo puede soportar cualquier esfuerzo, es tu mente a la que debes convencer."</p>
     <div className="footer-header">
       <div className="fh-line"></div>            <div className="fh-logo">
-        <img src='https://static.vecteezy.com/system/resources/thumbnails/010/629/917/small_2x/vintage-logo-gym-fitness-template-illustration-free-vector.jpg' alt="Meat Palace Logo" />
+        <img src='https://static.vecteezy.com/system/resources/previews/007/653/260/non_2x/masculine-fitness-gym-silhouette-illustration-vector.jpg' alt="Meat Palace Logo" />
       </div>
       <div className="fh-line"></div>
     </div>

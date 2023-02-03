@@ -1,0 +1,40 @@
+.userIcon {
+    background: transparent;
+    width: 30px;
+}
+.btnCloseModal {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    background: transparent;
+    border: none;
+}
+.modalLogin{
+    @extend .mainFont;
+    h2 {
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 20px;
+    }
+    input {
+        @extend .secondaryFont;
+        padding: 5px;
+        width: 100%;
+        outline: none;
+        border-radius: 0%;
+        height: 40px;
+        margin-bottom: 20px;
+    }
+    .buttonLogin {
+        margin-top: 5px;
+        border: none;
+        background-color: black;
+    }
+    .btnRegister {
+        margin-top: 10px;
+        background-color: transparent;
+        border: none;   
+        color: rgb(102,0,0);
+    }
+}

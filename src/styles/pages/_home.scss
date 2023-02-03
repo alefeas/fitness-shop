@@ -1,0 +1,46 @@
+.minHeight{
+    min-height: 92.53vh
+}
+.containerHome {
+    @extend .mainFont;
+    background: url('../../images/imgHomee.jpg') no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    .containerSpanButtonHome {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 20%;
+        top: 40%;        
+        font-size: 44px;
+        width: 450px;
+        button {
+            @extend .backgroundMainColor;
+            @extend .buttonCustom;
+            height: 50px;
+            width: 160px !important;
+        }
+    }
+    .containerInfoHome {
+        background-color: rgb(255, 255, 255);
+        .containerTitleBesties {
+            text-align: left;        
+            color: black;
+            margin-bottom:40px;
+            h3 {
+                padding: 30px;
+                text-align: center;        
+                font-size: 44px;
+                svg {
+                    font-size: 40px;
+                }
+            }
+            .containerItemBesties {
+                gap: 33.33px;
+            }
+        }
+    }
+} 

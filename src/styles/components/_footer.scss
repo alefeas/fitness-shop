@@ -16,11 +16,6 @@ footer {
         text-align: center;
         .gitHubIcon {
             margin: 7.5px;
-            transition: .2s;
-            &:hover {
-                transition: .2s;
-                color: rgba(0, 0, 0, 0.8) !important;
-            }
         }
     }
     .footer-header {
@@ -38,6 +33,7 @@ footer {
         .fh-logo { 
             img {
                 border-radius:50%;
+                margin-top: 10px;
                 width:100px;
                 height:auto;
             }

@@ -2,15 +2,15 @@ import { serverTimestamp, doc, collection, updateDoc, increment, addDoc } from "
 import { db } from "../../utils/firebaseConfig"
 import { Link } from "react-router-dom"
 import { useContext, useState } from "react"
-import { CartContext } from "../../components/cartContext/CartContext"
-import { Loader } from "../../components/loader/Loader"
+import { CartContext } from "../../context/CartContext"
+import { Loader } from "../loader/Loader"
 import '../../styles/styles.scss'
 
 export const Checkout = () => {
     const ctx = useContext(CartContext)
 
     const [name, setName] = useState('')
-    const [mail, setMail] = useState('')
+    const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
     const [orderId, setOrderId] = useState('')
     const [loading, setLoading] = useState(false)
@@ -27,7 +27,7 @@ export const Checkout = () => {
         let order = {
             buyer: {
                 name: name,
-                email: mail,
+                email: email,
                 phone: phone,
             },
             date: serverTimestamp(),
@@ -47,7 +47,7 @@ export const Checkout = () => {
         setCartBuyed(true)
         setTimeout(() => {
         setLoading(false)
-        }, 1000);
+        }, 1500);
     }
     if (ctx.cartList.length === 0 && cartBuyed === false) {
         window.location.href = '/'
@@ -67,7 +67,7 @@ export const Checkout = () => {
                         </div>
                         <div className="containerInput">
                         <span>E-MAIL</span>
-                        <input onChange={event => setMail(event.target.value)} type="text" required/>
+                        <input onChange={event => setEmail(event.target.value)} type="text" required/>
                         </div>
                     </div>
                     <div className="containerInputs">

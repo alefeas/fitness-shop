@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { CartContext } from "../cartContext/CartContext"
+import { CartContext } from "../../context/CartContext"
 import { Link } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -22,6 +22,7 @@ export const Cart = () => {
             theme: "dark",
         });
     }
+    
     return (
         <div>
             <div className="containerCartTitle">

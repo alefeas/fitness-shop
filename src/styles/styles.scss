@@ -5,21 +5,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
 
 //VARIABLES
-$main-color: rgb(90, 38, 37);
+$main-color: rgb(0, 0, 0);
 
 //COMPONENTS
-@import './components/_navBar.scss';
-@import './components/_footer.scss';
-@import './components/_cartWidget.scss';
-@import './components/itemDetail.scss';
-@import './components/_itemListContainer.scss';
-@import './components/_loader.scss';
-@import './components/_item.scss';
-@import './components/_cart.scss';
+@import './components/_navBar';
+@import './components/_footer';
+@import './components/_cartWidget';
+@import './components/itemDetail';
+@import './components/_itemListContainer';
+@import './components/_loader';
+@import './components/_item';
+@import './components/_cart';
+@import './components/_checkout';
+@import './components/_account';
 
 //PAGES
-@import './pages/_checkout';
 @import './pages/_notFound';
+@import './pages/_home';
 
 //GENERAL STYLES
 a {
@@ -64,6 +66,9 @@ a {
         color: white;
         border-radius: 50%;
     }
+}
+Link {
+    text-decoration: none !important;
 }
 
 //ALERTS

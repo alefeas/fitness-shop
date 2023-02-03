@@ -1,7 +1,7 @@
 import { Item } from '../item/Item'
 import { Loader } from '../loader/Loader'
 
-export const ItemList = ({products}) => {
+export const ItemListSearch = ({products}) => {
     return (
         <>
         {

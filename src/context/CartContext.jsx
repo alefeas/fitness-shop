@@ -1,5 +1,5 @@
 import { createContext} from 'react'
-import { useLocalStorage } from '../../hooks/useLocalStorage'
+import { useLocalStorage } from '../hooks/useLocalStorage'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2'

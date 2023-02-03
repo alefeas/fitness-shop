@@ -2,7 +2,7 @@ import { Loader } from '../loader/Loader'
 import { ItemCount } from '../itemCount/ItemCount'
 import { Link } from 'react-router-dom'
 import { useState, useContext} from 'react'
-import { CartContext } from "../cartContext/CartContext"
+import { CartContext } from "../../context/CartContext"
 import '../../styles/styles.scss'
 
 export const ItemDetail = ({item}) => {

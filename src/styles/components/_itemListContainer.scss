@@ -1,17 +1,10 @@
 .containerListTitle {
     font-family: 'Staatliches';
-    width: 1633.33px;
-    margin: 30px auto;
-    .containerFilter {
-        margin-bottom: 30px;
-        .containerTitelCategory {
-            border-bottom: 1px solid black;
-            .titleCategory {
-                font-size: 40px;
-            }
-        }
-    }    
+    font-size: 30px;
     .productCatalog {
+        width: 1300.33px;
+        margin: 0px auto;
+        padding-bottom: 30px;
         display: flex;
         justify-content: left;
         flex-wrap: wrap;
@@ -19,12 +12,40 @@
         div {
             width: 300px;
         }
-        .btnDetalles{
+    }
+    .containerShopLinks {
+        gap: 50px;
+        margin-bottom: 40px;
+        span {
+            color: black;
+        }
+    }
+    .shopBanner {
+        min-height: 400px;
+        width: 100%;
+        background: url('../../images/imgHome.jpg') no-repeat;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+    }
+    .sm-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        max-width: 1300.33px;
+        h1 {
+            color: black;
+            text-transform: uppercase;
+            width: 675px;
+            letter-spacing: 1px;
+        }
+        .smh-line {
             width: 100%;
-            height: 50px;
-            font-size: 22px;
-            color: white;
-            border: none;
+            height: 2px;
+            border-radius: 1px;
+            background-color: black;
         }
     }
 }
