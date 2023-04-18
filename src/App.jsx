@@ -4,11 +4,9 @@ import { CartContextProvider } from './context/CartContext'
 import { Footer } from './components/footer/Footer'
 import { AppRoutes } from './appRoutes/AppRoutes';
 import { ToastContainer } from 'react-toastify';
-import { AuthContextProvider } from './context/AuthContext';
 
 export const App = () => {
   return (
-    <AuthContextProvider>
     <CartContextProvider>
     <BrowserRouter>
       <NavBar />
@@ -17,6 +15,5 @@ export const App = () => {
     </BrowserRouter>
     <ToastContainer/>
     </CartContextProvider>
-    </AuthContextProvider>
   )
 }

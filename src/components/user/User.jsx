@@ -1,13 +1,9 @@
 // LOGIN Y REGISTRO NO FINALIZADO
 
-import { auth } from "../../utils/firebaseConfig";
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { Loader } from "../loader/Loader";
-import { UserAuth } from "../../context/AuthContext";
 import PersonIcon from '@mui/icons-material/Person';
 import CloseIcon from '@mui/icons-material/Close';
 import '../../styles/styles.scss'
@@ -27,17 +23,14 @@ const style = {
 };
 
 export const SignUp = () => {
-    const [emailRegister, setEmailRegister] = useState('')
-    const [passwordRegister, setPasswordRegister] = useState('')
-    const [emailLogin, setEmailLogin] = useState('')
-    const [passwordLogin, setPasswordLogin] = useState('')
+
+    const [, setEmailRegister] = useState('')
+    const [, setPasswordRegister] = useState('')
+    const [, setEmailLogin] = useState('')
+    const [, setPasswordLogin] = useState('')
   
     const [open, setOpen] = React.useState(false);
     const [formRegister, setFormRegister] = useState(false)
-    const [loading, setLoading] = useState(false)
-    //const [error, setError] = useState()
-
-    const { createUser } = UserAuth()
     
     const handleOpen = () => {
       setOpen(true);
@@ -55,12 +48,7 @@ export const SignUp = () => {
 
     return (
       <React.Fragment>
-        {
-          auth.currentUser == null
-          ?
-          <button className='userIcon' onClick={handleOpen}><PersonIcon/></button>
-          : <button className='userIcon'><Link to='/account'><PersonIcon/></Link></button>
-        }
+        <button className='userIcon' onClick={handleOpen}><PersonIcon/></button>
         <Modal
           className={'modalLogin'}
           open={open}
@@ -68,13 +56,11 @@ export const SignUp = () => {
           aria-labelledby="child-modal-title"
           aria-describedby="child-modal-description"
         >
-          <Box sx={{ ...style, width: 400 }}>
+          <Box sx={{ ...style }}>
             {
               !formRegister
               ?
               <>
-              {
-                !loading ?
                 <form>
                 <h2 id="child-modal-title">Iniciar Sesión</h2>
                 <p className='m-0' id="child-modal-description">Correo electrónico</p>
@@ -87,13 +73,9 @@ export const SignUp = () => {
                   <span className='secondaryFont'>¿Aún no tienes cuenta?<button className='btnRegister' onClick={goToRegister}>Registrarse</button></span>
                 </div>
                 </form>
-                : <Loader/>  
-              }
               </>
               : 
               <>
-              {
-                !loading ?
                 <form>
                 <h2 id="child-modal-title">Creá tu cuenta</h2>
                 <p className='m-0' id="child-modal-description">Correo electrónico</p>
@@ -106,8 +88,6 @@ export const SignUp = () => {
                   <span className='secondaryFont'>¿Ya tienes cuenta?<button className='btnRegister' onClick={goToLogin}>Iniciar sesión</button></span>
                 </div>
                 </form>
-                : <Loader/>  
-                }
                 </>
             }
           </Box>
